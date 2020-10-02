@@ -135,6 +135,11 @@ class redis::sentinel (
   Stdlib::Absolutepath $working_dir = $redis::params::sentinel_working_dir,
   Optional[Stdlib::Absolutepath] $notification_script = undef,
   Optional[Stdlib::Absolutepath] $client_reconfig_script = undef,
+  Optional[Stdlib::Port] $tls_port = undef,
+  Optional[Stdlib::Absolutepath] $key_file = undef,
+  Optional[Stdlib::Absolutepath] $cert_file = undef,
+  Optional[String[1]] $tls_replication = undef,
+
 ) inherits redis::params {
   require 'redis'
 
