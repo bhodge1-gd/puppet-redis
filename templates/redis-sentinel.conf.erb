@@ -23,7 +23,7 @@ sentinel client-reconfig-script <%= @master_name %> <%= @client_reconfig_script 
 loglevel <%= @log_level %>
 logfile <%= @log_file %>
 
-<% if @tls_replication -%>
+<% if @use_tls -%>
 tls-port <%= @tls_port %>
 tls-auth-clients no
 tls-key-file <%= @key_file %>

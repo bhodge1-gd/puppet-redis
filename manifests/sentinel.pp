@@ -140,6 +140,7 @@ class redis::sentinel (
   Optional[Stdlib::Absolutepath] $cert_file = undef,
   Optional[Stdlib::Absolutepath] $ca_cert_file = undef,
   Optional[String[1]] $tls_replication = undef,
+  Boolean $use_tls                                               = false,
 ) inherits redis::params {
   require 'redis'
 

@@ -331,6 +331,12 @@ class redis (
   Boolean $cluster_require_full_coverage                         = true,
   Integer[0] $cluster_migration_barrier                          = 1,
   Hash[String[1], Hash] $instances                               = {},
+  Optional[Stdlib::Port] $tls_port = undef,
+  Optional[Stdlib::Absolutepath] $key_file = undef,
+  Optional[Stdlib::Absolutepath] $cert_file = undef,
+  Optional[String[1]] $tls_replication = undef,
+  Boolean $use_tls                                               = false,
+
 ) inherits redis::params {
   contain redis::preinstall
   contain redis::install
