@@ -782,6 +782,14 @@ cluster-require-full-coverage <% if @cluster_require_full_coverage -%>yes<% else
 cluster-migration-barrier <%= @cluster_migration_barrier %>
 <% end -%>
 
+<% if @use_tls -%>
+tls-port <%= @tls_port %>
+tls-auth-clients no
+tls-key-file <%= @key_file %>
+tls-cert-file <%= @cert_file %>
+tls-replication  <%= @tls_replication %>
+tls-ca-cert-file <%= @ca_cert_file %>
+<% end -%>
 
 ################################## INCLUDES ###################################
 
@@ -797,11 +805,3 @@ include <%= @extra_config_file %>
 <% end -%>
 
 
-<% if @use_tls -%>
-tls-port <%= @tls_port %>
-tls-auth-clients no
-tls-key-file <%= @key_file %>
-tls-cert-file <%= @cert_file %>
-tls-replication  <%= @tls_replication %>
-tls-ca-cert-file <%= @ca_cert_file %>
-<% end -%>
