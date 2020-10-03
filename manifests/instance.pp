@@ -285,12 +285,12 @@ define redis::instance (
   Stdlib::Absolutepath $pid_file                                 = "/var/run/redis/redis-server-${name}.pid",
   Variant[Stdlib::Absolutepath, Enum['']] $unixsocket            = "/var/run/redis/redis-server-${name}.sock",
   Stdlib::Absolutepath $workdir                                  = "${redis::workdir}/redis-server-${name}",
-  Stdlib::Port $tls_port = $redis::tls_port,
-  Stdlib::Absolutepath $key_file = $redis::key_file,
-  Stdlib::Absolutepath $cert_file = $redis::cert_file,
-  Stdlib::Absolutepath $ca_cert_file = $redis::ca_cert_file,
-  String[1] $tls_replication = $redis::tls_replication,
-  Boolean $use_tls = $redis::use_tls,
+  Stdlib::Port $tls_port                                         = $redis::tls_port,
+  Stdlib::Absolutepath $key_file                                 = $redis::key_file,
+  Stdlib::Absolutepath $cert_file                                = $redis::cert_file,
+  Stdlib::Absolutepath $ca_cert_file                             = $redis::ca_cert_file,
+  String[1] $tls_replication                                     = $redis::tls_replication,
+  Boolean $use_tls                                               = $redis::use_tls,
 ) {
   if $title == 'default' {
     $redis_file_name_orig = $config_file_orig
